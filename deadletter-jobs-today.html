@@ -1,0 +1,8 @@
+<html>
+<body>
+<script>
+var rightNow = new Date();
+var res = rightNow.toISOString().slice(0,10).replace(/-/g,"");
+window.location = "https://dev.azure.com/cbinfrastructure/cbi/_build?definitionId=1967&_a=summary&tagFilter=" + res
+</script>
+</body>
