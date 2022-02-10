@@ -1,8 +1,10 @@
 <html>
 <body>
 <script>
-var rightNow = new Date();
-var res = rightNow.toISOString().slice(0,10).replace(/-/g,"");
-window.location = "https://dev.azure.com/cbinfrastructure/cbi/_build?definitionId=1967&_a=summary&tagFilter=" + res
+var dateFilter = new Date().toISOString().slice(0,10).replace(/-/g,"");
+var customParams = window.location.search
+if (customParams.length > 0)
+  customParams = "&" + customParams.substring(1);
+window.location = "https://dev.azure.com/cbinfrastructure/cbi/_build?definitionId=1967&_a=summary&tagFilter=" + dateFilter + customParams
 </script>
 </body>
